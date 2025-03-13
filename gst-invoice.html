@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Tax Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .invoice {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #007bff;
+        }
+
+        .header p {
+            margin: 5px 0;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .header strong {
+            color: #333;
+        }
+
+        .customer-details h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .customer-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        .table td {
+            font-size: 14px;
+        }
+
+        #net-total {
+            font-weight: bold;
+            font-size: 16px;
+            color: #007bff;
+        }
+
+        #pay-now {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #pay-now:hover {
+            background-color: #218838;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice">
+        <div class="header">
+            <h1>RM MEDICAL AGENCIES</h1>
+            <p>Shop 2 GROUND FLOOR, Shivrampally, Rajendra Nagar, HYDERABAD, TELANGANA-52</p>
+            <p><strong>GSTIN:</strong> 24XXXXXXXXXX</p>
+            <p><strong>Drug License No:</strong> DL9876543210</p>
+            <p><strong>Mobile:</strong> 9876543210</p>
+            <p><strong>Email:</strong> rmmedical@example.com</p>
+        </div>
+
+        <div class="customer-details">
+            <h3>Customer Details</h3>
+            <p><strong>Invoice No:</strong> 12345</p>
+            <p><strong>Date:</strong> <span id="date"></span></p>
+            <p><strong>Customer Name:</strong> John Doe</p>
+            <p><strong>Mobile Number:</strong> 9876543210</p>
+            <p><strong>Email ID:</strong> john.doe@example.com</p>
+            <p><strong>Customer Drug License Number:</strong> DL123456789</p>
+            <p><strong>Customer GST Number:</strong> 24YYYYYYYYYY</p>
+            <p><strong>Address:</strong> 123 ABC Street, City, State</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-items">
+                <!-- Items will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: right;"><strong>Net Total:</strong></td>
+                    <td id="net-total"><strong>₹0</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <button id="pay-now">Pay Now</button>
+        </div>
+
+        <div class="qr-code">
+            <img src="QR.jpeg" alt="QR Code">
+        </div>
+
+        <div class="footer">
+            <p>This is a computer-generated invoice and does not require a signature.</p>
+        </div>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        // Load cart data from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Render the cart items
+        const invoiceItems = document.getElementById("invoice-items");
+        const netTotal = document.getElementById("net-total");
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const row = document.createElement("tr");
+            const itemTotal = item.qty * item.price;
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>₹${item.price.toFixed(2)}</td>
+                <td>₹${itemTotal.toFixed(2)}</td>
+            `;
+
+            invoiceItems.appendChild(row);
+            total += itemTotal;
+        });
+
+        netTotal.textContent = `₹${total.toFixed(2)}`;
+
+        // Add the current date
+        document.getElementById("date").textContent = new Date().toLocaleDateString();
+
+        // Razorpay Payment Integration
+        document.getElementById("pay-now").addEventListener("click", () => {
+            const options = {
+                key: "your_razorpay_api_key", // Replace with your Razorpay API Key
+                amount: total * 100, // Amount in paise
+                currency: "INR",
+                name: "RM Medical Agencies",
+                description: "Invoice Payment",
+                image: "logo.png", // Replace with your logo URL
+                handler: function(response) {
+                    alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+                    localStorage.removeItem("cart"); // Clear cart
+                    location.reload(); // Reload page
+                },
+                prefill: {
+                    name: "John Doe",
+                    email: "john.doe@example.com",
+                    contact: "9876543210"
+                },
+                theme: {
+                    color: "#007bff"
+                }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        });
+    </script>
+</body>
+</html>

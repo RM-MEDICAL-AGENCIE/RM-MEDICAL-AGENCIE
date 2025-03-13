@@ -1,0 +1,59 @@
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/ambrodryl-ls.jpeg" alt="Ambrodryl LS Image">  (AMBRODRYL-LS)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/PANTAPROZOLE%2040%20MG.jpeg" style="width:300px; height:auto;"> (PANTAPROZOLE 40 MG )
+ 
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/PANTAPROZOLE%20DSR.jpg"  alt="Pantaprazole DSR" style="width:300px; height:auto;"> (PANTAPROZOLE DSR)
+
+<img src="file:///C:/Users/PC/Downloads/ACECLOFENAC%20&%20PARACETAMOL.jpg" alt="Aceclofenac & Paracetamol" style="width:300px; height:auto;"> (Aceclofenac & Paracetamol)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/CLINIP%20M-50%20TABLET.jpeg" style="width:300px; height:auto;"> (CLINIP M-50 TABLET)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/KETOVAG%20SOAP.jpeg" alt="KETOVAG SOAP" style="300px; height:auto;"> (KETOVAG SOAP) (****)
+         
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/PARAVAL%20-500.jpeg" style="300px; height:auto;"> (PARAVAL 500MG)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/CIPMOX%20250.jpeg" alt="CIPMOX 250" style="300px; height:auto;"> (CIPMOX 250)
+
+<img src="file:///C:/Users/PC/OneDrive/Desktop/New%20folder%20(2)/IMAGE/BRUFEN%20200%20MG.jpg" alt="BRUFEN 200 MG" style="300px; height:auto;"> (BRUFEN 200 MG) (****)       
+         
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/METFORM-500.jpeg" alt="METFORM-500" style="300px; height:auto;"> (METFORM-500MG)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/CEFIXIME%20200%20MG.jpeg" style="300px; height:auto;"(Cefixime 200 mg)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/PANTAFOL-40%20MG.jpeg" alt="PANTAFOL-40 MG" style="300px; height:auto;"(PANTAFOL-40 MG)
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/AZITHRO-250%20MG.jpeg" style="300px; height:auto;"(AZITHRO-250 MG)  
+
+<img src="file:///C:/Users/PC/OneDrive/Desktop/New%20folder%20(2)/IMAGE/RABICIP%2020%20MG.jpeg" alt="RABICIP 20 MG" Style="300px; height:auto;"RABICIP 20 MG
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/SURGICAL%20GLUBS.jpeg" alt="SURGICAL GLUBS" Style="300px; height:auto;"Surgical Glubs
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/KIT-KAT.jpeg" Style="300px; height:auto;"KIT-KAT
+
+<img src="file:///D:/xampp/htdocs/myweb/IMAGE/GAUZE%20PADS.jpeg" Style="300px; height:auto; "GAUZE PADS
+
+img src="file:///D:/xampp/htdocs/myweb/IMAGE/TRUGUT.jpeg" alt="TRUGUT" Style="300px; height:auto; "TRUGUT
+
+
+<div class="product"><img src="file:///C:/Users/PC/OneDrive/Desktop/New%20folder%20(2)/IMAGE/TRUGUT.jpeg" 
+     alt="TRUGUT" Style="300px; height:auto;><br>TRUGUT<br>1500rs-Box-MRP<br><button>BUY</button></div>
+
+
+image+ product code 
+{<!-- Product Sections -->
+<div class="product-section">
+    <div class="section-title">GENERIC PRODUCTS</div>
+    <div class="products">
+<section>
+
+    <div class="product">IMAGE<BR>NAME<br>MRP<br><button>BUY</button></div>
+
+    <div class="product">IMAGE<BR>NAME<br>MRP<br><button>BUY</button></div>
+
+    <div class="product">IMAGE<BR>NAME<br>MRP<br><button>BUY</button></div>
+
+    <div class="product">IMAGE<BR>NAME<br>MRP<br><button>BUY</button></div>
+          </div>
+        </section>
+    </div>
+</div>}

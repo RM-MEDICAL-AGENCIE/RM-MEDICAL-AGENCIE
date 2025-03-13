@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See All Products</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        /* Product Item */
+        .product-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>See All Products</h1>
+        <p>Explore our wide range of medical products</p>
+    </header>
+
+    <main>
+        <section class="product-list">
+            <!-- Product 1 -->
+            <article class="product-item">
+                <img src="IMAGE/ambrodryl-ls.jpeg" alt="ambrodryl-ls.jpeg" class="product-image">
+                <h2 class="product-title">Ambrodryl-Ls</h2>
+                <p class="product-description">THIS IS A COUGHF SYRUF.</p>
+                <p class="product-price">₹ 148.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="product-item">
+                <img src="IMAGE/Blood-Pressure-Monitor.jpeg" alt="Blood-Pressure-Monitor.jpeg" class="product-image">
+                <h2 class="product-title">Blood-Pressure-Monitor</h2>
+                <p class="product-description">Easy-to-use monitor for checking your blood pressure at home.</p>
+                <p class="product-price">₹ 1100.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="product-item">
+                <img src="IMAGE/romsons-oximeter-oxee-check.jpg" alt="Romsons-Oximeter-Oxee-Check" class="product-image">
+                <h2 class="product-title">Romsons-Oximeter-Oxee-Check</h2>
+                <p class="product-description">Monitor your oxygen saturation levels and pulse rate.</p>
+                <p class="product-price">₹ 1100.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="product-item">
+                <img src="IMAGE/First-Aid-Kit.jpeg" alt="First-Aid-Kit.jpeg" class="product-image">
+                <h2 class="product-title">First-Aid-Kit</h2>
+                <p class="product-description">Comprehensive first aid kit for home and travel use.</p>
+                <p class="product-price">₹ 1,899.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 5 -->
+            <article class="product-item">
+                <img src="IMAGE/STETHOSCOPE.jpeg" alt="STETHOSCOPE" class="product-image">
+                <h2 class="product-title">Stethoscope</h2>
+                <p class="product-description">Premium stethoscope for accurate heart and lung sound detection.</p>
+                <p class="product-price">₹ 299.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 6 -->
+            <article class="product-item">
+                <img src="IMAGE/Ampicillin-tablets-1000-mg.jpeg" alt="Ampicillin-tablets-1000-mg" class="product-image">
+                <h2 class="product-title">Ampicillin-tablets-1000-mg</h2>
+                <p class="product-description">Ampicillin is used to treat infections caused by bacteria.</p>
+                <p class="product-price">₹ 555.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 7 -->
+            <article class="product-item">
+                <img src="IMAGE/Meropenem-injection-1GM.jpeg" alt="Meropenem injection" class="product-image">
+                <h2 class="product-title">Meropenem-injection-1GM</h2>
+                <p class="product-description">Meropenem injection is used to treat infections caused by bacteria..</p>
+                <p class="product-price">₹ 1,089.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 8 -->
+            <article class="product-item">
+                <img src="IMAGE/hydralazine-tablets-25MG.jpg" alt="hydralazine-tablets-25MG" class="product-image">
+                <h2 class="product-title">hydralazine-tablets-25MG</h2>
+                <p class="product-description">Hydralazine is used to treat high blood pressure (hypertension)..</p>
+                <p class="product-price">₹ 200.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 9 -->
+            <article class="product-item">
+                <img src="IMAGE/Hydrocortisone%20ointment%201%25.jpeg" alt=" Hydrocortisone ointment 1%" class="product-image">
+                <h2 class="product-title"> Hydrocortisone ointment 1%</h2>
+                <p class="product-description">Hydrocortisone 1% ointment is a corticosteroid medication used to treat skin conditions that cause itching, swelling, redness, and discomfort.</p>
+                <p class="product-price">₹ 115.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 10 -->
+            <article class="product-item">
+                <img src="IMAGE/Dextran-colloid.jpeg" alt="Dextran-colloid" class="product-image">
+                <h2 class="product-title">Dextran-colloid</h2>
+                <p class="product-description">Dextran is a colloid used in medicine to treat hypovolemia, hemorrhage, and other conditions.</p>
+                <p class="product-price">₹ 180.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 11 -->
+            <article class="product-item">
+                <img src="IMAGE/Ear%20Thermometer.jpeg" alt="Ear Thermometer" class="product-image">
+                <h2 class="product-title">Ear Thermometer</h2>
+                <p class="product-description">Fast and reliable ear thermometer for all ages.</p>
+                <p class="product-price">₹ 1,499.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+
+            <!-- Product 12 -->
+            <article class="product-item">
+                <img src="IMAGE/During-peritoneal.jpeg" alt="During peritoneal" class="product-image">
+                <h2 class="product-title">During peritoneal</h2>
+                <p class="product-description">During peritoneal dialysis, a cleansing fluid called dialysate passes through a catheter tube into part of the abdomen known as the peritoneal cavity.</p>
+                <p class="product-price">₹ 90.00</p>
+                <button class="buy-button">ADD-TO-CART</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025 RM Medical Products Store</p>
+    </footer>
+</body>
+
+</html>

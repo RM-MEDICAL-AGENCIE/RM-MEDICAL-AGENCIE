@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM Medical Agencies - Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .cart-container {
+            width: 300px;
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: none;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .cart-total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+    </header>
+    
+    <div class="cart-container" id="cart-container">
+        <h3>Shopping Cart</h3>
+        <div id="cart-items"></div>
+        <p class="cart-total">Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+    
+    <div class="products">
+        <div class="product">
+            <p>AMBRODRYL-LS - ₹148</p>
+            <button onclick="addToCart('AMBRODRYL-LS', 148)">BUY</button>
+        </div>
+        <div class="product">
+            <p>PARAVAL 500MG - ₹45</p>
+            <button onclick="addToCart('PARAVAL 500MG', 45)">BUY</button>
+        </div>
+    </div>
+    
+    <script>
+        let cart = [];
+        
+        function addToCart(product, price) {
+            cart.push({ name: product, price: price });
+            updateCart();
+        }
+        
+        function updateCart() {
+            let cartItems = document.getElementById("cart-items");
+            let cartTotal = document.getElementById("cart-total");
+            let cartCount = document.getElementById("cart-count");
+            
+            cartItems.innerHTML = "";
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItems.innerHTML += <div class='cart-item'>${item.name} - ₹${item.price} <button onclick='removeFromCart(${index})'>X</button></div>;
+            });
+            
+            cartTotal.innerText = total;
+            cartCount.innerText = cart.length;
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+        
+        function toggleCart() {
+            let cartContainer = document.getElementById("cart-container");
+            cartContainer.style.display = cartContainer.style.display === "none" ? "block" : "none";
+        }
+        
+        function checkout() {
+            fetch('cart_order.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cart)
+            }).then(response => response.json()).then(data => {
+                alert(data.message);
+                if (data.status === 'success') {
+                    cart = [];
+                    updateCart();
+                }
+            }).catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

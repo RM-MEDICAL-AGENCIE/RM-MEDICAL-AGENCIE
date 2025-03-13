@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link href="login.php" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('newbr.jpeg') no-repeat center center fixed; /* Page background */
+      background-size: cover;
+    }
+
+    .form-container {
+  width: 320px;                           /* Fixed width of the form */
+  border-radius: 0.75rem;                 /* Rounded corners for the form */
+  background: url('loginbrcodr.jpeg') 
+              no-repeat center center/cover; /* Background image, centered, covering the container */
+  padding: 2rem;                          /* Spacing inside the container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a soft shadow */
+}
+
+      color: rgba(243, 244, 246, 1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+
+    .form {
+      margin-top: 1.5rem;
+    }
+
+    .input-group {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .input-group label {
+      display: block;
+      color: rgba(156, 163, 175, 1);
+      margin-bottom: 4px;
+    }
+
+    .input-group input {
+      width: 100%;
+      border-radius: 0.375rem;
+      border: 1px solid rgba(55, 65, 81, 1);
+      outline: 0;
+      background-color: rgba(17, 24, 39, 1);
+      padding: 0.75rem 1rem;
+      color: rgba(243, 244, 246, 1);
+    }
+
+    .input-group input:focus {
+      border-color: rgba(167, 139, 250);
+    }
+
+    .forgot {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: rgba(156, 163, 175, 1);
+      margin: 8px 0 14px 0;
+    }
+
+   input[type="submit"] {
+  background-color: #34D399; /* New button background color (green) */
+  color: white; /* Keep the text color white */
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #059669; /* New hover background color (darker green) */
+}
+
+.login {
+  display: block;                  /* Makes the button a block-level element */
+  width: 100%;                     /* Full width */
+  background-color:rgba(167, 139, 250, 1); /* Background color */
+  padding: 0.75rem;                /* Padding for button size */
+  text-align: center;              /* Centers the text */
+  color: rgba(17, 24, 39, 1);      /* Text color */
+  border: none;                    /* No border */
+  border-radius: 0.375rem;         /* Rounded corners */
+  font-weight: 600;                /* Bold text */
+  cursor: pointer;                 /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.login:hover {
+  background-color: rgba(139, 92, 246, 1); /* Darker shade on hover */
+}
+
+
+    .sign {
+      display: block;
+      width: 100%;
+      background-color: rgba(167, 139, 250, 1);
+      padding: 0.75rem;
+      text-align: center;
+      color: rgba(17, 24, 39, 1);
+      border: none;
+      border-radius: 0.375rem;
+      font-weight: 600;
+    }
+
+   .social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.125rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: #800080; /* Purple background for the button */
+  margin-left: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.social-icons .icon::before {
+  content: "G"; /* Add the letter G */
+  font-family: Arial, sans-serif; /* Use a bold font for the G */
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff; /* White color for the G */
+  position: absolute;
+}
+
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <p class="title">Login</p>
+  <form class="form" action="new.html" method="POST">
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label> 
+      <input type="password" name="password" placeholder=""  required>
+      <div class="forgot">
+        <div class="input-group">
+        <a rel="noopener noreferrer" href="forgot-reset-password.php">Forgot Password?</a>
+      </div>
+    </div>
+    <button class="sign">Sign in</button>
+  </form>
+  <div class="social-message">
+    <div class="line"></div>
+    <p class="message">Login with social accounts</p>
+    <div class="line"></div>
+  </div>
+   <div class="social-icons">
+    <a href="https://accounts.google.com/signin" target="_blank" class="icon">
+      <i class="fab fa-google"></i>
+    </a>
+  </div>
+  <p class="signup">Don't have an account?
+    <a rel="noopener noreferrer" href="signup.html">Sign up</a>
+  </p>
+</div>
+</body>
+</html>

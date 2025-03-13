@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM Medical Agencies</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        /* Cart */
+        .cart-container {
+            width: 300px;
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: none;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .cart-total {
+            font-weight: bold;
+        }
+
+        #cart {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+        }
+
+        table td button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        table td button:hover {
+            background-color: #c0392b;
+        }
+
+        #place-order {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        #place-order:hover {
+            background-color: #2980b9;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: #45a049;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1000;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .cart-container {
+                width: 100%;
+                left: 0;
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RM Medical Agencies</h1>
+    </header>
+
+    <!-- Cart Icon -->
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+
+    <!-- Cart Container -->
+    <div class="cart-container" id="cart-container">
+        <h3>Shopping Cart</h3>
+        <div id="cart-items"></div>
+        <p class="cart-total">Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Products Display -->
+    <div class="products">
+        <div class="product">
+            <p>AMBRODRYL-LS - ₹148</p>
+            <button onclick="addToCart('AMBRODRYL-LS', 148)">BUY</button>
+        </div>
+        <div class="product">
+            <p>PARAVAL 500MG - ₹45</p>
+            <button onclick="addToCart('PARAVAL 500MG', 45)">BUY</button>
+        </div>
+    </div>
+
+    <!-- Cart Details -->
+    <div id="cart">
+        <h2>Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items-table">
+                <!-- Cart items will be dynamically loaded here -->
+            </tbody>
+        </table>
+        <button id="place-order">Place Order</button>
+    </div>
+
+    <script>
+        let cart = [];
+
+        // Function to add product to cart
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCart();
+        }
+
+        // Update cart display
+        function updateCart() {
+            const cartItemsTable = document.getElementById('cart-items-table');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const cartCount = document.getElementById('cart-count');
+
+            cartItemsTable.innerHTML = '';
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItemsTable.innerHTML += 
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>₹${item.price}</td>
+                        <td><button onclick="removeFromCart(${index})">Remove</button></td>
+                    </tr>
+                ;
+                cartItems.innerHTML += 
+                    <div class='cart-item'>${item.name} - ₹${item.price} <button onclick='removeFromCart(${index})'>X</button></div>
+                ;
+            });
+
+            cartTotal.innerText = total;
+            cartCount.innerText = cart.length;
+        }
+
+        // Remove product from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Toggle cart visibility
+        function toggleCart() {
+            let cartContainer = document.getElementById("cart-container");
+            cartContainer.style.display = cartContainer.style.display === "none" ? "block" : "none";
+        }
+
+        // Place order
+        document.getElementById('place-order').addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            // Example of sending cart data to a server
+            alert('Order placed successfully!');
+            cart = [];  // Clear cart after placing the order
+            updateCart();
+        });
+    </script>
+</body>
+</html>  

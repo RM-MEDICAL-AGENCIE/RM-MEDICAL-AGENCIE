@@ -1,0 +1,137 @@
+<?php
+// Include database connection
+include 'db_connection.php';
+
+if (isset($_POST['submit_forgot'])) {
+    // Forgot Password Logic
+    $email = $_POST['email'];
+
+    // Check if the email exists in the database
+    $query = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Generate a token for the password reset
+        $token = bin2hex(random_bytes(50));
+
+        // Save the token in the database
+        $query = "INSERT INTO password_resets (email, token) VALUES (?, ?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $email, $token);
+        $stmt->execute();
+
+        // Send reset email
+        $resetLink = "http://yourwebsite.com/forgot-reset-password.php?token=$token";
+        $subject = "Password Reset Request";
+        $message = "Please click on the link below to reset your password:\n\n$resetLink";
+        $headers = "From: no-reply@yourwebsite.com";
+
+        if (mail($email, $subject, $message, $headers)) {
+            echo "<p>A password reset link has been sent to your email.</p>";
+        } else {
+            echo "<p>There was an error sending the email. Please try again later.</p>";
+        }
+    } else {
+        echo "<p>No account found with that email address.</p>";
+    }
+} elseif (isset($_GET['token'])) {
+    // Reset Password Logic
+    $token = $_GET['token'];
+
+    // Check if the token is valid
+    $query = "SELECT * FROM password_resets WHERE token = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $token);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        if (isset($_POST['submit_reset'])) {
+            // Handle the password reset
+            $password = $_POST['password'];
+            $confirmPassword = $_POST['confirm_password'];
+
+            if ($password == $confirmPassword) {
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+                // Get the email associated with the token
+                $query = "SELECT email FROM password_resets WHERE token = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param("s", $token);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                $email = $row['email'];
+
+                // Update the password in the users table
+                $query = "UPDATE users SET password = ? WHERE email = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param("ss", $hashedPassword, $email);
+                $stmt->execute();
+
+                // Remove the reset token from the database
+                $query = "DELETE FROM password_resets WHERE token = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param("s", $token);
+                $stmt->execute();
+
+                echo "<p>Your password has been successfully reset. You can now <a href='login.php'>login</a>.</p>";
+            } else {
+                echo "<p>Passwords do not match.</p>";
+            }
+        }
+    } else {
+        echo "<p>Invalid or expired token.</p>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot / Reset Password</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Use your existing styles here */
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <p class="title"><?php echo isset($_GET['token']) ? 'Reset Password' : 'Forgot Password'; ?></p>
+
+  <?php if (!isset($_GET['token'])): ?>
+    <!-- Forgot Password Form -->
+    <form class="form" action="forgot-reset-password.php" method="POST">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <button class="sign" type="submit" name="submit_forgot">Send Reset Link</button>
+    </form>
+  <?php else: ?>
+    <!-- Reset Password Form -->
+    <form class="form" action="forgot-reset-password.php?token=<?php echo $_GET['token']; ?>" method="POST">
+      <div class="input-group">
+        <label for="password">New Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <div class="input-group">
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" required>
+      </div>
+      <button class="sign" type="submit" name="submit_reset">Reset Password</button>
+    </form>
+  <?php endif; ?>
+
+  <p class="signup">Remembered your password?
+    <a href="login.php">Login</a>
+  </p>
+</div>
+</body>
+</html>
+s

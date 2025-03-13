@@ -1,0 +1,244 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGULAR ITEMS</title> <!-- Updated title -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        /* Product Item */
+        .product-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>REGULAR ITEM </h1> <!-- Updated heading -->
+        <p>Explore our wide range of medical products</p>
+    </header>
+<main>
+    <section class="product-list">
+        <!-- Product 1 -->
+        <article class="product-item">
+            <img src="IMAGE/Nifedipine%20tablet%205mg.jpeg" alt="Nifedipine TabLETS.IP .5mg " class="product-image">
+            <h2 class="product-title">Nifedipine Tablets.IP.5mg </h2>
+            <p class="product-description">Nifedipine is used alone or together with other medicines to treat severe chest pain (angina) or high blood pressure (hypertension).</p>
+            <p class="product-price">₹ 150.00</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-item">
+            <img src="IMAGE/Omeprazole%20capsule%2040%20mg.jpeg" alt="Omeprazole capsule 40 mg" class="product-image">
+            <h2 class="product-title">Blood Omeprazole capsule 40 mg</h2>
+            <p class="product-description">Omeprazole is used to treat certain conditions where there is too much acid in the stomach.</p>
+            <p class="product-price">₹ 13.00</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-item">
+            <img src="IMAGE/vitamin-A-capsules-25000.jpeg" alt="Medical Product 3" class="product-image">
+            <h2 class="product-title">vitamin A capsules 25000</h2>
+            <p class="product-description">Vitamin A is essential for good vision, especially in low light..</p>
+            <p class="product-price">₹ 800.00/STIP</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-item">
+            <img src="IMAGE/Alendronate%20tab.%205mg,35mg.jpeg" alt="Alendronate tab. 5mg,35mg" class="product-image">
+            <h2 class="product-title">Alendronate tab. 5mg,35mg</h2>
+            <p class="product-description">Alendronate is used to prevent and treat osteoporosis (thinning of the bone) in women after menopause.</p>
+            <p class="product-price">₹ 125.00</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="product-item">
+            <img src="IMAGE/Lamivudine%20tablet.jpeg" alt="Lamivudine tablet" class="product-image">
+            <h2 class="product-title">Lamivudine tablet</h2>
+            <p class="product-description">Lamivudine (Epivir-HBV) is used to treat hepatitis B infection..</p>
+            <p class="product-price">₹ 120.00</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="product-item">
+            <img src="IMAGE/Mycophenolate%20mofetil.jpeg" alt="Mycophenolate mofetil" class="product-image">
+            <h2 class="product-title">Mycophenolate mofetil</h2>
+            <p class="product-description">Mycophenolate is used to prevent transplant organ rejection (attack of the new organ by the immune system) in people who have received kidney, heart, or liver transplants.</p>
+            <p class="product-price">₹ 200.00 </p>
+           <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 7 -->
+        <article class="product-item">
+            <img src="IMAGE/henylephrine+CPM+PCM.jpeg" alt="henylephrine+CPM+PCM" class="product-image">
+            <h2 class="product-title">henylephrine+CPM</h2>
+            <p class="product-description">Phenylephrine + chlorpheniramine (CPM) + paracetamol (PCM) is a combination of medicines that treats cold and allergy symptomss.</p>
+            <p class="product-price">₹ 158.00</p>
+           <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 8 -->
+        <article class="product-item">
+            <img src="IMAGE/Elastocrepe%20bandage%207.5%20cm.jpeg" alt="Elastocrepe bandage 7.5 cm" class="product-image">
+            <h2 class="product-title">Elastocrepe bandage 7.5 cm</h2>
+            <p class="product-description">They are ideal for securing wound dressings, supporting strains, and providing compression to alleviate swelling.</p>
+            <p class="product-price">₹ 285.00</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 9 -->
+        <article class="product-item">
+            <img src="IMAGE/magnesium%20sulphate%20Inj%2050%25.jpeg" alt="magnesium sulphate Inj 50%" class="product-image">
+            <h2 class="product-title">magnesium sulphate Inj 50%</h2>
+            <p class="product-description">Magnesium Sulfate Injection is used to treat low levels of magnesium in the blood where it is not possible for the medicine to be taken by mouth.</p>
+            <p class="product-price">₹ 6.00/Piece</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 10 -->
+        <article class="product-item">
+            <img src="IMAGE/Benzydamine.jpeg" alt="Benzydamine" class="product-image">
+            <h2 class="product-title">Benzydamine</h2>
+            <p class="product-description">Benzydamine is an NSAID (non-steroidal anti-inflammatory drug) that reduces pain and swelling (inflammation).</p>
+            <p class="product-price">₹ 320.00</p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 11 -->
+        <article class="product-item">
+            <img src="IMAGE/bleomycin-injection-usp-15-iu.jpg" alt="Bleomycin Inj. 15 mg/iu" class="product-image">
+            <h2 class="product-title">Bleomycin Inj. 15 mg/iu</h2>
+            <p class="product-description">Bleomycin is used to treat cancer. It works by slowing or stopping the growth of cancer cells..</p>
+            <p class="product-price">₹ 550.00 </p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>
+
+        <!-- Product 12 -->
+        <article class="product-item">
+            <img src="IMAGE/Salbutamol%20theophylline%20tablet.jpeg" alt="Salbutamol theophylline tablet" class="product-image">
+            <h2 class="product-title">Salbutamol theophylline tablet</h2>
+            <p class="product-description">Salbutamol+theophylline helps in the management of asthma and chronic obstructive pulmonary disease (COPD) by relaxing and widening the narrowed or blocked airways 
+                                  (bronchial tubes) of the lungs making it easier to breathe in..</p>
+            <p class="product-price">₹ 20.00/STIP </p>
+            <button class="buy-button">ADD-TO-CART</button>
+        </article>S
+    </section>
+</main>
+
+<footer>
+    <p>2025 RM Medical Products Store</p>
+</footer>
+</body>
+
+</html>

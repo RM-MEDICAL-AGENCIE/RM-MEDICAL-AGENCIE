@@ -1,0 +1,117 @@
+Generic Products (25 Names)                     
+
+Paracetamol Tablet (650 mg)                      
+Diclofenac Sodium Spray                         
+Ibuprofen Tablet (400 mg)                        
+Lignocaine HCl Injection (1%)                    
+Cefuroxime Tablet (250 mg)
+Ranitidine Injection (50 mg/ml)
+Metformin Tablet (500 mg)
+Alprazolam Tablet (0.5 mg)
+Omeprazole Capsule (40 mg)
+Acyclovir Tablet (200 mg)
+Gentamicin Injection (40 mg/ml)
+Ciprofloxacin Tablet (1 g)
+Doxycycline Capsule (200 mg)
+Diazepam Tablet (5 mg)
+Sodium Valproate Injection (300 mg/ml)
+Diclofenac Potassium Tablet (75 mg)
+Loratadine Tablet (5 mg)
+Fluconazole Tablet (100 mg)
+Itraconazole Capsule (100 mg)
+Midazolam Injection (5 mg/ml)
+Pentazocine Injection (60 mg/ml)
+Piroxicam Gel (0.5%)
+Allopurinol Tablet (100 mg)
+Methotrexate Tablet (10 mg)
+Levofloxacin Tablet (750 mg)
+
+
+Surgical Products (25 Names)
+
+Lignocaine HCl Injection (1%)
+Lignocaine + Nifedipine Ointment
+Tramadol Injection (100 mg/ml)
+Diclofenac Potassium Gel (1%)
+Fentanyl Injection (50 mcg/ml)
+Sutures (Surgical Material)
+Cutting Needle (medium and small)
+Chloramphenicol Eye Drops (0.05%)
+Adrenaline Injection (1:1000)
+Oxygen Inhalation
+Hydrocortisone Ointment (1%)
+Amphotericin Injection (50 mg/ml)
+Ceftriaxone Injection (1 g)
+Ceftazidime Injection (2 g)
+Meropenem Injection (500 mg)
+Vancomycin Injection (100 mg/ml)
+Gentamicin Injection (40 mg/ml)
+Amikacin Injection (250 mg)
+Linezolid Injection (100 mg/100 ml)
+Ethamsylate Injection (500 mg)
+Betamethasone Injection (12 mg/ml)
+Povidone Iodine Solution
+Normal Saline (Infusion)
+Dextran (Colloid Solution)
+Factor 8 Injection
+
+Ethical Products (25 Names)
+
+Alprazolam Tablet (0.5 mg)
+Amoxicillin + Clavulanic Acid Tablet
+Cefixime Tablet (250 mg)
+Diclofenac Sodium + Serratiopeptidase Tablet
+Loratadine Tablet (5 mg)
+Hydroxychloroquine Tablet (100 mg)
+Methotrexate Tablet (10 mg)
+Tramadol Tablet (50 mg)
+Lornoxicam Tablet (8 mg)
+Diazepam Tablet (5 mg)
+Pregabalin Capsule (75 mg)
+Midazolam Injection (5 mg/ml)
+Sodium Valproate Tablet (200 mg)
+Clindamycin Capsule (150 mg)
+Fluconazole Tablet (50 mg)
+Itraconazole Capsule (100 mg)
+Sumatriptan Tablet (25 mg)
+Gabapentin Tablet (400 mg)
+Paracetamol Injection (500 mg)
+Pantoprazole Tablet (40 mg)
+Doxycycline Capsule (200 mg)
+Ciprofloxacin Tablet (1 g)
+Cefuroxime Injection (500 mg)
+Gentamicin Injection (40 mg/ml)
+Azithromycin Tablet (250 mg)
+
+
+PCD Products (25 Names)
+
+
+Amoxicillin + Clavulanic Acid Tablet
+Paracetamol Tablet (650 mg)
+Diclofenac Potassium Tablet
+Pantoprazole Tablet (40 mg)
+Omeprazole + Domperidone Capsule
+Rabeprazole Tablet (20 mg)
+Montelukast + Levocetirizine Tablet
+Cefuroxime Tablet (250 mg)
+Cefixime Tablet (100 mg)
+Azithromycin Tablet (250 mg)
+Levocetirizine Tablet (5 mg)
+Loratadine Tablet (10 mg)
+Doxycycline Capsule (200 mg)
+Metronidazole Gel
+Clotrimazole Cream (1%)
+Ibuprofen Tablet (400 mg)
+Pregabalin Capsule (75 mg)
+Lornoxicam Tablet (8 mg)
+Diclofenac Gel (1%)
+Tramadol Tablet (50 mg)
+Folic Acid Tablet (5 mg)
+Iron + Folic Acid Tablet
+Allopurinol Tablet (100 mg)
+Methotrexate Tablet (10 mg)
+Glibenclamide + Metformin Tablet
+
+
+

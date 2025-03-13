@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETHICAL & PCD PRODUCTS</title>
+  <style>
+    /* Reset some basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and header styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #4CAF50;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Product container styling */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Individual product card styling */
+    .product-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-item img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+
+    .product-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-item h2 {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .product-item .product-price {
+      font-size: 20px;
+      color: #e74c3c;
+      margin: 10px 0;
+    }
+
+    .product-item .buy-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .product-item .buy-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Media Query for responsiveness */
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ETHICAL & PCD PRODUCTS</h1>
+  </header>
+
+  <section class="product-container">
+    <!-- Product 1 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 1">
+      <h2 class="product-title">Product 1</h2>
+      <p class="product-description">Description for Product 1</p>
+      <p class="product-price">$25.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 2 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Blood Pressure Monitor">
+      <h2 class="product-title">Blood Pressure Monitor</h2>
+      <p class="product-description">Easy-to-use monitor for checking your blood pressure at home.</p>
+      <p class="product-price">$49.99</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 3 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 3">
+      <h2 class="product-title">Product 3</h2>
+      <p class="product-description">Description for Product 3</p>
+      <p class="product-price">$28.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 4 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 4">
+      <h2 class="product-title">Product 4</h2>
+      <p class="product-description">Description for Product 4</p>
+      <p class="product-price">$35.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 5 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 5">
+      <h2 class="product-title">Product 5</h2>
+      <p class="product-description">Description for Product 5</p>
+      <p class="product-price">$22.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 6 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 6">
+      <h2 class="product-title">Product 6</h2>
+      <p class="product-description">Description for Product 6</p>
+      <p class="product-price">$40.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 7 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 7">
+      <h2 class="product-title">Product 7</h2>
+      <p class="product-description">Description for Product 7</p>
+      <p class="product-price">$50.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 8 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 8">
+      <h2 class="product-title">Product 8</h2>
+      <p class="product-description">Description for Product 8</p>
+      <p class="product-price">$18.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 9 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 9">
+      <h2 class="product-title">Product 9</h2>
+      <p class="product-description">Description for Product 9</p>
+      <p class="product-price">$45.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 10 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 10">
+      <h2 class="product-title">Product 10</h2>
+      <p class="product-description">Description for Product 10</p>
+      <p class="product-price">$33.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 11 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 11">
+      <h2 class="product-title">Product 11</h2>
+      <p class="product-description">Description for Product 11</p>
+      <p class="product-price">$19.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+    <!-- Product 12 -->
+    <article class="product-item">
+      <img src="https://via.placeholder.com/300x200" alt="Product 12">
+      <h2 class="product-title">Product 12</h2>
+      <p class="product-description">Description for Product 12</p>
+      <p class="product-price">$27.00</p>
+      <button class="buy-button">Buy Now</button>
+    </article>
+  
+  </section>
+</body>
+</html>

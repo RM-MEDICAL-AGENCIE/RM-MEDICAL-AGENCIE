@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic page layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        /* Product Section */
+        .product {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            grid-template-rows: auto;
+        }
+
+        .product .product-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            max-width: 250px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .product p {
+            font-size: 1.2em;
+            color: #16a085;
+            margin-bottom: 20px;
+        }
+
+        .product button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1.1em;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .product {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .product h2 {
+                font-size: 1.6em;
+            }
+
+            .product p {
+                font-size: 1.1em;
+            }
+
+            .product button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Product Page</h1>
+    </header>
+
+    <section class="product">
+        <div class="product-item">
+            <img src="IMAGE/ambrodryl-ls.jpeg" alt="AMBRODRYL-LS">
+            <h2>AMBRODRYL-LS</h2>
+            <p>Price: ₹148</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/ACECLOFENAC%20&%20PARACETAMOL.jpg" alt="ACECLOFENAC & PARACETAMOL">
+            <h2>ACECLOFENAC & PARACETAMOL</h2>
+            <p>Price: ₹8</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/Benzydamine.jpeg" alt="BENZYDAMINE">
+            <h2>BENZYDAMINE</h2>
+            <p>Price: ₹320</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/bleomycin-injection-usp-15-iu.jpg" alt="BLEOMYCIN-INJECTION-USP-15-IU">
+            <h2>BLEOMYCIN-INJECTION-USP-15-IU</h2>
+            <p>Price: ₹550</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/PARAVAL%20-500.jpeg" alt="PARAVAL 500">
+            <h2>PARAVAL 500</h2>
+            <p>Price: ₹45</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/AZITHRO-250%20MG.jpeg" alt="Product6">
+            <h2>AZITHRO-250 MG</h2>
+            <p>Price: ₹45.00</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/SURGICAL%20GLUBS.jpeg" alt="Product7">
+            <h2>Surgical Glubs</h2>
+            <p>Price: ₹700</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/Alendronate%20tab.%205mg,35mg.jpeg" alt="Product8">
+            <h2>Alendronate tab. 5mg,35mg</h2>
+            <p>Price: ₹125.00</p>
+            <button>Add to Cart</button>
+        </div>
+
+           <div class="product-item">
+            <img src="IMAGE/Ampicillin-tablets-1000-mg.jpeg" alt="Product9">
+            <h2>AMPRICILLIN-TABLETS-1000-MG</h2>
+            <p>Price: ₹555.00</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/Blood-Pressure-Monitor.jpeg" alt="Product10">
+            <h2>BLOOD-PRESSURE-MONITER</h2>
+            <p>Price: ₹1100</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/BRUFEN%20200%20MG.jpg" alt="Product11">
+            <h2>BRUFEN 200 MG</h2>
+            <p>Price: ₹120</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/CANESTEM%20CREAM.jpeg" alt="Product12">
+            <h2>PCANESTEM CREAM</h2>
+            <p>Price: ₹94.20</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/CEFIXIME%20200%20MG.jpeg" alt="Product13">
+            <h2>Cefixime 200mg</h2>
+            <p>Price: ₹1000</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/Product14.jpeg" alt="Product14">
+            <h2>Product14</h2>
+            <p>Price: ₹1400</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="IMAGE/Product15.jpeg" alt="Product15">
+            <h2>Product15</h2>
+            <p>Price: ₹1500</p>
+            <button>Add to Cart</button>
+        </div>
+
+
+        
+    </section>
+
+    <footer>
+        <p>2025 RM MEDICAL AGENCIES</p>
+    </footer>
+
+</body>
+</html>

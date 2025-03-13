@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <style>
+        /* Basic styles for the page */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #search-bar {
+            margin: 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+        }
+
+        .no-results {
+            font-size: 18px;
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Search Bar -->
+    <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+
+    <!-- Product List -->
+    <div class="product-list" id="product-list">
+        <div class="product" data-name="Product 1">
+            <h3>Product 1</h3>
+            <p>₹500</p>
+        </div>
+        <div class="product" data-name="Product 2">
+            <h3>Product 2</h3>
+            <p>₹700</p>
+        </div>
+        <div class="product" data-name="Product 3">
+            <h3>Product 3</h3>
+            <p>₹900</p>
+        </div>
+        <div class="product" data-name="Product 4">
+            <h3>Product 4</h3>
+            <p>₹1200</p>
+        </div>
+    </div>
+
+    <!-- No results message -->
+    <div id="no-results" class="no-results" style="display: none;">No products found</div>
+
+    <script>
+        // Function to filter products based on the search input
+        function searchProducts() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+            let found = false;
+
+            products.forEach(product => {
+                const productName = product.getAttribute('data-name').toLowerCase();
+
+                if (productName.includes(query)) {
+                    product.style.display = 'block';
+                    found = true;
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            // If no products are found, show the "no results" message
+            const noResultsMessage = document.getElementById('no-results');
+            if (found) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
